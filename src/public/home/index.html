@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MyApp | Home</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <h1>MyApp</h1>
+
+        <nav>
+            <ul>
+                <li><a href="/">Página Inicial</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/cadastro">Cadastro</a></li>
+                <li><a href="/home">Home</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h2>Home</h2>
+
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="content">Nova Postagem</label>
+                    <textarea id="content" name="content" rows="3" required></textarea>
+                </div>
+                <button type="submit">Postar</button>
+            </form>
+
+            <div id="postsContainer"></div>
+
+            <div id="pagination"></div>
+        </div>
+
+        <script src="/home/script.js"></script>
+    </body>
+</html>

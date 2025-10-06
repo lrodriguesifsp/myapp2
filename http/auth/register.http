@@ -1,0 +1,23 @@
+### Localhost
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Fulano",
+  "username": "fulano",
+  "email": "fulano@gmail.com",
+  "password": "12345678"
+}
+
+### Railway
+
+POST https://your-custom-domain-here.up.railway.app/auth/register
+Content-Type: application/json
+
+{
+  "name": "Fulano",
+  "username": "fulano",
+  "email": "fulano@gmail.com",
+  "password": "12345678"
+}
