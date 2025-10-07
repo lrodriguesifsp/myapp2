@@ -9,15 +9,35 @@ document.addEventListener('DOMContentLoaded', () => {
 			const response = await fetch(`/posts?page=${page}&limit=5`);
 			const data = await response.json();
 
+			// Limpa o container
 			postsContainer.innerHTML = '';
-			data.posts.forEach(post => {
+
+			// Itera sobre cada post
+			data.posts.forEach((post) => {
+				// Cria o elemento principal do post
 				const postElement = document.createElement('div');
 				postElement.classList.add('post');
-				postElement.innerHTML = `
-					<p><strong>@${post.username}</strong></p>
-					<p>${post.content}</p>
-					<small>${new Date(post.createdAt).toLocaleString()}</small>
-				`;
+
+				// Cria elemento para username
+				const usernameElement = document.createElement('p');
+				const usernameStrong = document.createElement('strong');
+				usernameStrong.textContent = `@${post.username}`;
+				usernameElement.appendChild(usernameStrong);
+
+				// Cria elemento para conteúdo
+				const contentElement = document.createElement('p');
+				contentElement.textContent = post.content;
+
+				// Cria elemento para data
+				const dateElement = document.createElement('small');
+				dateElement.textContent = new Date(post.createdAt).toLocaleString();
+
+				// Adiciona todos os elementos ao post
+				postElement.appendChild(usernameElement);
+				postElement.appendChild(contentElement);
+				postElement.appendChild(dateElement);
+
+				// Adiciona o post ao container
 				postsContainer.appendChild(postElement);
 			});
 
