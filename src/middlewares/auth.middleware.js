@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken';
 
 export const authenticate = (req, res, next) => {
 	const authHeader = req.headers['authorization'];
-	
-	let token;
+
+	let token = null;
 	if (authHeader && authHeader.startsWith('Bearer ')) {
 		token = authHeader.split(' ')[1];
 	} else if (req.cookies && req.cookies.token) {
@@ -12,7 +12,7 @@ export const authenticate = (req, res, next) => {
 	}
 
 	if (!token) {
-		return next(createError(401, 'Authentication token not found.'));
+		throw createError(401, 'Token não fornecido');
 	}
 
 	try {
@@ -20,6 +20,6 @@ export const authenticate = (req, res, next) => {
 		req.user = decoded;
 		next();
 	} catch (err) {
-		return next(createError(401, 'Invalid token'));
+		throw createError(401, 'Token inválido');
 	}
 };

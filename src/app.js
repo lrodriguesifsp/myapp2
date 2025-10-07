@@ -6,9 +6,9 @@ import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
 
-import indexRouter from './routes/index.js';
-import authRouter from './routes/auth.js';
-import postsRouter from './routes/posts.js';
+import indexRouter from '#routes/index.routes.js';
+import authRouter from '#routes/auth.routes.js';
+import postsRouter from '#routes/post.routes.js';
 
 const __dirname = import.meta.dirname;
 
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
 		console.error(err.stack);
 	}
 
-	res.status(status).json({ message });
+	res.status(status).json({ success: false, message });
 });
 
 // Start server

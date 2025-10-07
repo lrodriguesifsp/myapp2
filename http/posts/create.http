@@ -1,7 +1,7 @@
 ### Create a new post
 POST http://localhost:3000/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmdWxhbm8iLCJpYXQiOjE3NTk3ODYyNzAsImV4cCI6MTc1OTc4OTg3MH0.s4In-tdgOdo4xAsaCgeX21WSqmAYz0-aa5TzkPjt96c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJmdWxhbm8iLCJpYXQiOjE3NTk4Njc4NDAsImV4cCI6MTc1OTg3MTQ0MH0.-AApJ_-4SPdd3ErL0etnnZZy88u3jzGmxCDKLKODfuU
 
 {
   "content": "Hello, World!"
